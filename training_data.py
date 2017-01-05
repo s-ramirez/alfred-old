@@ -1,24 +1,29 @@
-import codecs
 import json
-import re
 import warnings
+from glob import glob
 from itertools import groupby
 
 class TrainingData(object):
-    def __init__(self, data_file):
+    def __init__(self, data_path):
         self.skills = []
 
         self.min_examples_per_intent = 2
 
-        self.load_data(data_file)
+        self.load_data(data_path)
 
     def as_json(self, **kwargs):
         return json.dumps({
             "skills": self.skills
         }, **kwargs)
 
-    def load_data(self, filename):
-        data = json.loads(open(filename, encoding='utf-8').read())
+    def load_data(self, path):
+        data = {}
+        for f in glob(path+'/*.json'):
+            with open(f, encoding='utf-8') as skill_file:
+                if(len(data) == 0):
+                    data = json.loads(skill_file.read())
+                else:
+                    data["skills"] = data["skills"] + json.loads(skill_file.read())["skills"]
         skills = data.get("skills", list())
 
         self.skills = skills
