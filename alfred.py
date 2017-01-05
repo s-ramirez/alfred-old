@@ -5,6 +5,7 @@ trainer = SpacySklearnClassifier()
 data = TrainingData('skills')
 
 trainer.train(data)
-print(trainer.parse("hola!"));
-print(trainer.parse("goodbye"));
-print(trainer.parse("i'm looking for a place in the north of town"));
+# print(trainer.parse("hola"));
+# print(trainer.parse("goodbye"));
+print(trainer.parse("Should I wear a sweater?"))
+print(trainer.parse("I'm looking for a place in the north of town"));

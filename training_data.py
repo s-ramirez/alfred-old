@@ -10,6 +10,7 @@ class TrainingData(object):
         self.min_examples_per_intent = 2
 
         self.load_data(data_path)
+        self.validate()
 
     def as_json(self, **kwargs):
         return json.dumps({
@@ -28,11 +29,11 @@ class TrainingData(object):
 
         self.skills = skills
 
-    # def validate(self):
-    #     examples = sorted(self.skills, key=lambda e: e["intent"])
-    #     skill = []
-    #     for intent, group in groupby(examples, lambda e: e["intent"]):
-    #         size = len(list(group))
-    #         if size < self.min_examples_per_intent:
-    #             template = "intent {0} has only {1} training examples! minimum is {2}, training may fail."
-    #             warnings.warn(template.format(intent, size, self.min_examples_per_intent))
+    def validate(self):
+        examples = sorted(self.skills, key=lambda e: e["intent"])
+        skill = []
+        for intent, group in groupby(examples, lambda e: e["intent"]):
+            size = len(list(group))
+            if size < self.min_examples_per_intent:
+                template = "intent {0} has only {1} training examples! minimum is {2}, training may fail."
+                warnings.warn(template.format(intent, size, self.min_examples_per_intent))

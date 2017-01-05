@@ -2,8 +2,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.model_selection import GridSearchCV
 from sklearn.preprocessing import LabelEncoder
 from sklearn.svm import SVC
-import logging
-
 
 class IntentClassifier(object):
     def __init__(self):
@@ -24,7 +22,7 @@ class IntentClassifier(object):
         self.clf.fit(X_train, y_train)
 
         # Test the trained model
-        logging.info("Score of intent model on test data: %s " % self.clf.score(X_test, y_test))
+        # print("Score of intent model on test data: %s " % self.clf.score(X_test, y_test))
 
     def predict(self, X, to_labels=True):
         y_pred = self.clf.predict(X)
