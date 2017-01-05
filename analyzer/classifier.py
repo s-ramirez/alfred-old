@@ -4,9 +4,9 @@ import datetime
 import json
 import cloudpickle
 
-from feature_analyzer import Featurizer
-from intent_classifier import IntentClassifier
-from entity_extractor import EntityExtractor
+from analyzer.feature_analyzer import Featurizer
+from analyzer.intent_classifier import IntentClassifier
+from analyzer.entity_extractor import EntityExtractor
 
 
 class SpacySklearnClassifier():

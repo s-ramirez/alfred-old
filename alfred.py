@@ -1,5 +1,5 @@
-from classifier import SpacySklearnClassifier
-from training_data import TrainingData
+from analyzer.classifier import SpacySklearnClassifier
+from analyzer.training_data import TrainingData
 
 trainer = SpacySklearnClassifier()
 data = TrainingData('skills')
