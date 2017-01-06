@@ -40,6 +40,6 @@ class SpacySklearnClassifier():
     def parse(self, text):
         preprocessesed = text.lower()
         intent = self.get_intent(preprocessesed)
-        entities = self.entity_extractor.extract_entities(self.nlp, text)
+        entities = self.entity_extractor.extract_entities(self.nlp, preprocessesed)
 
         return {'text': text, 'intent': intent, 'entities': entities}
