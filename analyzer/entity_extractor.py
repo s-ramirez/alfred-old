@@ -38,7 +38,7 @@ class EntityExtractor(object):
         self.ner.model.end_training()
 
     def extract_entities(self, nlp, sentence):
-        doc = nlp.make_doc(sentence)
+        doc = nlp(sentence)
         nlp.tagger(doc)
         self.ner(doc)
 

@@ -15,7 +15,7 @@ class SpacySklearnClassifier():
     def __init__(self, settings):
         self.training_data = None
         self.settings = settings
-        self.nlp = spacy.load('en', parser=False, entity=False)
+        self.nlp = spacy.load('en')
         self.featurizer = Featurizer(self.nlp)
         self.actions = ActionHandler.get_actions()
         self.intent_classifier = IntentClassifier()
@@ -41,7 +41,7 @@ class SpacySklearnClassifier():
         return self.intent_classifier.predict(X)[0]
 
     def parse(self, text):
-        preprocessesed = text.lower()
+        preprocessesed = text
         intent = self.get_intent(preprocessesed)
         entities = self.entity_extractor.extract_entities(self.nlp, preprocessesed)
 

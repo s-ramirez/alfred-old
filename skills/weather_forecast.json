@@ -1,31 +1,31 @@
 {
   "skills": [
     {
-      "text": "how's the weather in paris?",
+      "text": "how's the weather in Paris?",
       "intent": "weather_forecast",
       "entities": [
         {
           "start": 21,
           "end": 26,
-          "value": "paris",
+          "value": "Paris",
           "entity": "GPE"
         }
       ]
     },
     {
-      "text": "what's the weather like in uruguay?",
+      "text": "what's the weather like in Uruguay?",
       "intent": "weather_forecast",
       "entities": [
         {
           "start": 27,
           "end": 34,
-          "value": "uruguay",
+          "value": "Uruguay",
           "entity": "GPE"
         }
       ]
     },
     {
-      "text": "is it going to be sunny in amsterdam?",
+      "text": "is it going to be sunny in Amsterdam?",
       "intent": "weather_forecast",
       "entities": [
         {
@@ -37,13 +37,13 @@
         {
           "start": 27,
           "end": 36,
-          "value": "amsterdam",
+          "value": "Amsterdam",
           "entity": "GPE"
         }
       ]
     },
     {
-      "text": "should i wear a sweater?",
+      "text": "should I wear a sweater?",
       "intent": "weather_forecast",
       "entities": [
         {
@@ -55,7 +55,7 @@
       ]
     },
     {
-      "text": "am i going to need shorts?",
+      "text": "am I going to need shorts?",
       "intent": "weather_forecast",
       "entities": [
         {
@@ -67,7 +67,7 @@
       ]
     },
     {
-      "text": "am i going to need a scarf?",
+      "text": "am I going to need a scarf?",
       "intent": "weather_forecast",
       "entities": [
         {
@@ -79,7 +79,7 @@
       ]
     },
     {
-      "text": "do i need a pants",
+      "text": "do I need a pants",
       "intent": "weather_forecast",
       "entities": [
         {
