@@ -1,22 +1,18 @@
 import json
-from actions.handler import ActionHandler
 
 from analyzer.classifier import SpacySklearnClassifier
 from analyzer.training_data import TrainingData
 
-trainer = SpacySklearnClassifier()
-settings = {}
+from adapters.telegram import TelegramAdapter
 
+settings = {}
 with open('config.json', encoding="utf-8") as settings_file:
     settings = json.loads(settings_file.read())
 
+classifier = SpacySklearnClassifier(settings)
 data = TrainingData('skills')
+classifier.train(data)
 
-trainer.train(data)
-# print(trainer.parse("I'm looking for a place in the north of town"));
-# command = trainer.parse("Is it raining should I wear a sweater?")
-command = trainer.parse("How's the weather in Paris?")
-
-actions = ActionHandler.get_actions()
-response = actions[command["intent"]].respond(settings,command)
-print(response)
+telegram = TelegramAdapter(settings["api_keys"]["telegram"], classifier)
+print("Starting Telegram Adapter")
+telegram.start_listening()

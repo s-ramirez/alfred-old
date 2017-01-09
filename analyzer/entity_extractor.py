@@ -50,4 +50,5 @@ class EntityExtractor(object):
             "end": ent.end_char
           }
           for ent in doc.ents]
+        print(entities)
         return entities

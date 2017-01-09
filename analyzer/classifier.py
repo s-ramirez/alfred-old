@@ -4,6 +4,7 @@ import datetime
 import json
 import cloudpickle
 
+from actions.handler import ActionHandler
 from analyzer.feature_analyzer import Featurizer
 from analyzer.intent_classifier import IntentClassifier
 from analyzer.entity_extractor import EntityExtractor
@@ -11,10 +12,12 @@ from analyzer.entity_extractor import EntityExtractor
 
 class SpacySklearnClassifier():
 
-    def __init__(self):
+    def __init__(self, settings):
         self.training_data = None
+        self.settings = settings
         self.nlp = spacy.load('en', parser=False, entity=False)
         self.featurizer = Featurizer(self.nlp)
+        self.actions = ActionHandler.get_actions()
         self.intent_classifier = IntentClassifier()
         self.entity_extractor = EntityExtractor()
 
@@ -43,3 +46,9 @@ class SpacySklearnClassifier():
         entities = self.entity_extractor.extract_entities(self.nlp, preprocessesed)
 
         return {'text': text, 'intent': intent, 'entities': entities}
+
+    def classify(self, text):
+        command = self.parse(text)
+        response = self.actions[command["intent"]].respond(self.settings, command)
+
+        return response

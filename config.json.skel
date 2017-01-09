@@ -1,0 +1,6 @@
+{
+  "api_keys": {
+    "openweather": "openweather api key",
+    "telegram": "telegram api key"
+  }
+}

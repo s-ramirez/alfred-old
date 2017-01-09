@@ -7,7 +7,7 @@ class WeatherForecast(Action):
 
     def respond(self, settings, context):
         key = settings["api_keys"]["openweather"]
-        location = Action.get_entity_type(context, "location")
+        location = Action.get_entity_type(context, "GPE")
         if(location is not None):
             return self.obtain_forecast(location["value"], key)
 
