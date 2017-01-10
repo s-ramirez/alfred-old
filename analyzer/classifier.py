@@ -15,7 +15,7 @@ class SpacySklearnClassifier():
     def __init__(self, settings):
         self.training_data = None
         self.settings = settings
-        self.nlp = spacy.load('en')
+        self.nlp = spacy.load('en', parser=False)
         self.featurizer = Featurizer(self.nlp)
         self.actions = ActionHandler.get_actions()
         self.intent_classifier = IntentClassifier()

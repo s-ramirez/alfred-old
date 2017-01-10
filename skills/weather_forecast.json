@@ -1,13 +1,13 @@
 {
   "skills": [
     {
-      "text": "how's the weather in Paris?",
+      "text": "how's the weather in Costa Rica?",
       "intent": "weather_forecast",
       "entities": [
         {
           "start": 21,
-          "end": 26,
-          "value": "Paris",
+          "end": 31,
+          "value": "Costa_Rica",
           "entity": "GPE"
         }
       ]
@@ -32,7 +32,7 @@
           "start": 18,
           "end": 23,
           "value": "sunny",
-          "entity": "forecast"
+          "entity": "FORECAST"
         },
         {
           "start": 27,
@@ -50,7 +50,7 @@
           "start": 16,
           "end": 23,
           "value": "sweather",
-          "entity": "clothes"
+          "entity": "CLOTHES"
         }
       ]
     },
@@ -62,7 +62,7 @@
           "start": 19,
           "end": 25,
           "value": "shorts",
-          "entity": "clothes"
+          "entity": "CLOTHES"
         }
       ]
     },
@@ -74,7 +74,7 @@
           "start": 21,
           "end": 26,
           "value": "scarf",
-          "entity": "clothes"
+          "entity": "CLOTHES"
         }
       ]
     },
@@ -86,7 +86,7 @@
           "start": 12,
           "end": 17,
           "value": "pants",
-          "entity": "clothes"
+          "entity": "CLOTHES"
         }
       ]
     },
@@ -108,7 +108,7 @@
           "start": 6,
           "end": 13,
           "value": "raining",
-          "entity": "forecast"
+          "entity": "FORECAST"
         }
       ]
     },
@@ -120,7 +120,7 @@
           "start": 6,
           "end": 13,
           "value": "snowing",
-          "entity": "forecast"
+          "entity": "FORECAST"
         }
       ]
     },
@@ -132,7 +132,7 @@
           "start": 6,
           "end": 11,
           "value": "sunny",
-          "entity": "forecast"
+          "entity": "FORECAST"
         }
       ]
     }

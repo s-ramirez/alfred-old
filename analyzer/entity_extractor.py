@@ -34,11 +34,13 @@ class EntityExtractor(object):
             for raw_text, entity_offsets in train_data:
                 doc = nlp.make_doc(raw_text)
                 gold = GoldParse(doc, entities=entity_offsets)
+
+                nlp.tagger(doc)
                 self.ner.update(doc, gold)
         self.ner.model.end_training()
 
     def extract_entities(self, nlp, sentence):
-        doc = nlp(sentence)
+        doc = nlp.make_doc(sentence)
         nlp.tagger(doc)
         self.ner(doc)
 
